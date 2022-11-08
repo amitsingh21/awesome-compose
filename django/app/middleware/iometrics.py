@@ -1,6 +1,6 @@
 import time
 
-from app.middleware.metrics import HTTPMetricsCollector
+from middleware.metrics import HTTPMetricsCollector
 # - Define IO_METRICS_HOST, IO_METRICS_UDP_PORT, and IO_METRICS_HTTP_PORT in your settings.py
 #   For instance you can keep:
 #     IO_METRICS_HOST = os.environ['IO_METRICS_HOST']
@@ -9,7 +9,7 @@ from app.middleware.metrics import HTTPMetricsCollector
 # - Update MIDDLEWARE list in settings.py to include:
 #     '<app>.middleware.HTTPMetricsMiddleware',
 # - Uncomment the following line and update path.to:
-from app.example.settings import IO_METRICS_HOST, IO_METRICS_UDP_PORT
+from example.settings import IO_METRICS_HOST, IO_METRICS_UDP_PORT
 
 
 class HTTPMetricsMiddleware:
