@@ -34,7 +34,7 @@ SECRET_KEY = env('SECRET_KEY',
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DEBUG', True)
 
-ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", ("localhost", "127.0.0.1"))
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -56,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'app.middleware.iometrics.HTTPMetricsMiddleware',
 ]
 
 ROOT_URLCONF = 'example.urls'
@@ -127,3 +128,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+IO_METRICS_HOST = os.environ['IO_METRICS_HOST']
+IO_METRICS_UDP_PORT = int(os.environ['IO_METRICS_UDP_PORT'])
+IO_METRICS_HTTP_PORT = int(os.environ['IO_METRICS_HTTP_PORT'])
