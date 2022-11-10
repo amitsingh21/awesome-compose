@@ -128,6 +128,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-IO_METRICS_HOST = os.environ['IO_METRICS_HOST']
-IO_METRICS_UDP_PORT = int(os.environ['IO_METRICS_UDP_PORT'])
-IO_METRICS_HTTP_PORT = int(os.environ['IO_METRICS_HTTP_PORT'])
